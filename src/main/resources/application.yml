@@ -12,6 +12,11 @@ spring:
       hibernate.format_sql: true
       show-sql: true
       dialect: org.hibernate.dialect.MySQL8InnoDBDialect
+# PutMapping, DeleteMapping
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
 logging:
   level:
     org.hibernate.SQL: debug
