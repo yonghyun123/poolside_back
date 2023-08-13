@@ -26,7 +26,7 @@ public class ProductService {
 
     //변경
     @Transactional
-    public Long update(Long id ,ProductSaveRequestDto updateProduct) {
+    public Long update(Long id , ProductSaveRequestDto updateProduct) {
         Product product = productRepository.findById(id).orElseThrow(() -> new NoSuchElementException("값이 존재하지 않습니다"));
         product.update(updateProduct.getTotCnt(),
                 updateProduct.getDescription(),

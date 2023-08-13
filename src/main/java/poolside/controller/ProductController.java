@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*;
 import poolside.common.dto.Response;
 import poolside.controller.dto.request.ProductSaveRequestDto;
 import poolside.controller.dto.response.ProductResponseDto;
-import poolside.entity.Product;
 import poolside.service.ProductService;
 
 import java.util.List;

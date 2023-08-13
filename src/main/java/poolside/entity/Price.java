@@ -1,10 +1,14 @@
 package poolside.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Table
 public class Price extends BaseEntity{
     @Id
@@ -26,5 +30,26 @@ public class Price extends BaseEntity{
     private String addPrice; //추가 요금
     private String totPrice; //총 요금
 
+    @Builder
+    public Price(Long productId, String seasonDvcd, String description, String startDate, String endDate, String childPrice, String addPrice, String totPrice) {
+        this.productId = productId;
+        this.seasonDvcd = seasonDvcd;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.childPrice = childPrice;
+        this.addPrice = addPrice;
+        this.totPrice = totPrice;
+    }
 
+    public void update(Long productId, String seasonDvcd, String description, String startDate, String endDate, String childPrice, String addPrice, String totPrice) {
+        this.productId = productId;
+        this.seasonDvcd = seasonDvcd;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.childPrice = childPrice;
+        this.addPrice = addPrice;
+        this.totPrice = totPrice;
+    }
 }
